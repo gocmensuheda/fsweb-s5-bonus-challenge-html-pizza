@@ -1,5 +1,9 @@
+ * {
+  box-sizing: border-box;
+}
 body {
   background-color: #FAF7F2;
+  margin: 0;
 }
 
 .hero {
@@ -410,4 +414,100 @@ footer {
   align-items: center;
   color: #888888;
   font-size: 0.9rem;
+}
+/* ==========================================
+   MOBİL UYUMLULUK (RESPONSIVE MEDIA QUERY)
+   ========================================== */
+@media (max-width: 526px) {
+
+  .hero {
+    min-height: 480px;
+    height: auto;
+    background-position: center top;
+    padding-bottom: 20px;
+  }
+
+  .app {
+    padding: 15px 10px;
+    gap: 15px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .logo {
+    width: 100%;
+    max-width: 180px;
+  }
+
+  .logo img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  .anaBaslik {
+    font-size: 1.8rem;
+    line-height: 1.1;
+  }
+
+  .campaigns {
+    flex-direction: column;
+    gap: 10px;
+    padding: 0 10px;
+  }
+
+  .campaigns__item--left {
+    min-height: 200px;
+  }
+
+  .campaigns__item--top,
+  .campaigns__item--bottom {
+    min-height: 120px;
+  }
+
+  .menu {
+    padding: 20px 10px;
+  }
+
+  .menu h2 {
+    font-size: 1.4rem;
+  }
+
+  .menu__cards {
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    padding: 0 10px;
+  }
+
+  .menu__card {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  footer {
+    padding: 30px 15px 20px 15px;
+  }
+
+  .footer__section {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    grid-template-columns: none !important;
+  }
+
+  .footer__section > div {
+    grid-column: auto !important;
+    grid-row: auto !important;
+  }
+
+  .instagram__images {
+    max-width: 100%;
+  }
+
+  .footer__bottom {
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+  }
 }
