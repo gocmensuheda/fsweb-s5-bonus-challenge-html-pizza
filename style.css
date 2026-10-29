@@ -177,3 +177,115 @@ body {
   color: #ce2829; /* Tasarımdaki kırmızı tonu */
   font-weight: 700;
 }
+.menu {
+  text-align: center;
+  padding: 40px 20px;
+}
+.menu p {
+  font-family: 'Satisfy', cursive;
+  font-size: 1.3rem;
+  color: #ce2829;
+  margin: 0 0 10px 0;
+  font-weight: 400;
+}
+
+.menu h2 {
+  font-family: 'Barlow', sans-serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #292929;
+  line-height: 1.2;
+  margin: 0 auto;
+  max-width: 600px;
+}
+
+.foods__list {
+  display: flex;
+  justify-content: center; /* Ortalanmış görünüm */
+  align-items: center;
+  gap: 15px;               /* Öğeler arası boşluk */
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  flex-wrap: wrap;         /* Taşma durumunda alt satıra geçiş */
+}
+.foods {
+  margin-top: 1.5rem;
+}
+.foods__item {
+  display: flex;
+  align-items: center;
+  gap: 10px;               /* İkon ile metin arasındaki küçük boşluk */
+  padding: 12px 20px;      /* Kapsüle hacim veren iç boşluklar */
+  background-color: #ffffff; /* Beyaz kapsül arkaplanı */
+  color: #292929;          /* Varsayılan metin rengi */
+  border-radius: 30px;     /* Köşeleri yuvarlatarak kapsül formu verme */
+  transition: all 0.3s ease;
+}
+.foods__item.foods__item--active {
+  background-color: #292929; /* Koyu gri arkaplan */
+  color: #ffffff;            /* Beyaz yazı ve ikon uyumu */
+}
+.menu__cards {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.menu__card {
+  background-color: #ffffff;
+  width: 300px;
+  padding: 20px;
+  box-sizing: border-box;
+  border-radius: 12px;
+}
+
+.menu__card h3 {
+  font-family: 'Barlow', sans-serif;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #292929;
+  margin: 0 0 15px 0;
+}
+.menu__card img {
+  width: 100%;
+  max-width: 200px;
+  height: auto;
+  display: block;
+  margin: 0 auto 16px auto;
+}
+
+.card-information {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  width: 100%;
+  margin: 0;
+}
+
+.card-information p {
+  margin: 0;
+  font-family: 'Barlow', sans-serif;
+  font-size: 0.95rem;
+  color: #555555;
+}
+
+/* Puan: Solda */
+.card-information p:nth-child(1) {
+  font-weight: 600;
+  text-align: left;
+}
+
+/* Değerlendirme sayısı (200): Ortada */
+.card-information p:nth-child(2) {
+  color: #5F5F5F;
+  text-align: center;
+}
+
+/* Fiyat: En sağda */
+.card-information p:nth-child(3) {
+  font-weight: 700;
+  color: #292929;
+  text-align: right;
+}
