@@ -61,10 +61,68 @@
   text-transform: uppercase;
 }
 
+.categories {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  overflow-x: hidden; /* Yatay taşmayı ve scroll çubuğunu engeller */
+  box-sizing: border-box;
+}
+
 .categories__list {
-  list-style: none;
   display: flex;
-  align-items: center;
   justify-content: center;
-  gap: 24px;
+  flex-wrap: wrap; /* Sığmayan elemanların alt satıra geçmesini sağlar */
+  list-style: none;
+  padding: 10px 20px;
+  margin: 0;
+  gap: 15px;
+}
+
+.campaigns {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  max-width: 650px;
+  margin: 25px auto;
+  padding: 0 15px;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.campaigns__right-col {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  flex: 1; 
+}
+
+.campaigns__item {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  align-items: center; 
+  padding: 20px;
+  color: #fff;
+  box-sizing: border-box;
+}
+
+.campaigns__item--left {
+  flex: 1;
+  min-height: 260px; 
+  background-image: url('./assets/iteration-2/cta/kart-1.png');
+}
+
+.campaigns__item--top {
+  min-height: 125px;
+  background-image: url('./assets/iteration-2/cta/kart-2.png');
+}
+
+.campaigns__item--bottom {
+  min-height: 125px;
+  background-image: url('./assets/iteration-2/cta/kart-3.png');
 }
