@@ -31,7 +31,10 @@
 }
 .anaBaslik {
   color: #FAF7F2;
+  font-family: 'Roboto Condensed', sans-serif;
+  font-weight: 300;
 }
 .hero__slogan {
   color: #FDC913;
+  font-family: 'Satisfy', cursive;
 }
