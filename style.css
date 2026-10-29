@@ -8,7 +8,7 @@ body {
 
 .hero {
   background-color: #ce2829; /* Görselin arkasındaki ana kırmızı renk */
-  background-image: url("./assets/iteration-1/home-banner.png"); /* Projenizdeki görsel yolu */
+  background-image: url("/assets/iteration-1/home-banner.png"); /* Projenizdeki görsel yolu */
   background-repeat: no-repeat;
   background-position: center bottom; /* Görseli alta ve ortaya sabitler */
   background-size: cover; /* veya genişliğe göre '100% auto' */
@@ -125,19 +125,19 @@ body {
 .campaigns__item--left {
   flex: 1;
   min-height: 260px; 
-  background-image: url('./assets/iteration-2/cta/kart-1.png');
+  background-image: url('/assets/iteration-2/cta/kart-1.png');
   align-items: flex-start; /* İçeriği dikeyde ortalamak yerine üst kısma hizalar */
   padding-top: 30px;
 }
 
 .campaigns__item--top {
   min-height: 125px;
-  background-image: url('./assets/iteration-2/cta/kart-2.png');
+  background-image: url('/assets/iteration-2/cta/kart-2.png');
 }
 
 .campaigns__item--bottom {
   min-height: 125px;
-  background-image: url('./assets/iteration-2/cta/kart-3.png');
+  background-image: url('/assets/iteration-2/cta/kart-3.png');
 }
 
 .campaigns button {
@@ -415,10 +415,11 @@ footer {
   color: #888888;
   font-size: 0.9rem;
 }
-/* ==========================================
-   MOBİL UYUMLULUK (RESPONSIVE MEDIA QUERY)
-   ========================================== */
+
 @media (max-width: 526px) {
+  .hero__slogan {
+    display: none;
+  }
 
   .hero {
     min-height: 480px;
@@ -432,6 +433,14 @@ footer {
     gap: 15px;
     width: 100%;
     box-sizing: border-box;
+  }
+  .categories__list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .foods__list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
   }
 
   .logo {
