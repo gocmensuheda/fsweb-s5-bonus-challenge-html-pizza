@@ -109,6 +109,17 @@ body {
   display: none;
 }
 
+@media (max-width: 898px) {
+  .categories {
+    overflow-x: visible;
+  }
+
+  .categories__list {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+}
+
 .campaigns {
   /* Kampanya kartlarını yan yana dizer; boşluk gap ile verilir. */
   display: flex;
@@ -231,7 +242,7 @@ body {
   justify-content: center;
   align-items: center;
   max-width: 850px;
-  gap: 10px;               /* Öğeler arası boşluk */
+  gap: 6px;                /* Kapsüller dar ekranlarda daha geç kaydırmaya başlar. */
   list-style: none;
   padding: 0;
   margin: 0 auto;
@@ -239,6 +250,15 @@ body {
   overflow-x: auto;        /* Dar ekranlarda kapsüller tek satırda yatay kaydırılır. */
   scrollbar-width: none;
 }
+
+@media (max-width: 898px) {
+  .foods__list {
+    justify-content: center;
+    flex-wrap: wrap;
+    overflow-x: visible;
+  }
+}
+
 .foods {
   margin-top: 1.5rem;
 }
