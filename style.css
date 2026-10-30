@@ -74,6 +74,7 @@ body {
   color: var(--beige);
   font-family: var(--font-heading);
   font-weight: 300;
+  font-size: 4rem;
 }
 .hero__slogan {
   color: var(--yellow);
