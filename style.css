@@ -1,17 +1,40 @@
+:root {
+  /* Ana renkler */
+  --yellow: #FDC913;
+  --gray: #5F5F5F;
+  --dark: #292929;
+  --red: #CE2829;
+  --beige: #FAF7F2;
+  --white: #FFFFFF;
+
+  /* Yardımcı renkler (footer ve küçük metinler) */
+  --gray-medium: #555555;
+  --footer-bg: #1A1A1A;
+  --footer-border: #333333;
+  --text-light: #CCCCCC;
+  --text-muted: #888888;
+
+  /* Fontlar */
+  --font-heading: 'Roboto Condensed', sans-serif;
+  --font-body: 'Barlow', sans-serif;
+  --font-serif: 'Quattrocento', serif;
+  --font-script: 'Satisfy', cursive;
+
+  /* Ortak içerik genişliği */
+  --container: 850px; /* tüm bölümler için ortak içerik genişliği */
+}
+
 * {
   /* Padding ve kenarlık, verilen genişliğin içine dahil edilir. */
   box-sizing: border-box;
 }
 body {
-  background-color: #FAF7F2;
+  background-color: var(--beige);
   margin: 0; /*tarayıcının verdiği dış boşluk sıfırlandı. Böylece sayfa arka planı ve bölümleri pencere kenarına kadar uzanmış oldu.*/
-}
-:root {
-  --container: 850px; /* tüm bölümler için ortak içerik genişliği */
 }
 
 .hero {
-  background-color: #ce2829; /* Görselin arkasındaki ana kırmızı renk */
+  background-color: var(--red); /* Görselin arkasındaki ana kırmızı renk */
   background-image: url("/assets/iteration-1/home-banner.png"); /* Projenizdeki görsel yolu */
   background-repeat: no-repeat; /* görsel tek bir görsel olarak kalsın*/
   background-position: center bottom; /* Görseli alta ve ortaya sabitler */
@@ -48,13 +71,13 @@ body {
   
 }
 .anaBaslik {
-  color: #FAF7F2;
-  font-family: 'Roboto Condensed', sans-serif;
+  color: var(--beige);
+  font-family: var(--font-heading);
   font-weight: 300;
 }
 .hero__slogan {
-  color: #FDC913;
-  font-family: 'Satisfy', cursive;
+  color: var(--yellow);
+  font-family: var(--font-script);
 }
 
 .hero__slogan,
@@ -63,9 +86,9 @@ body {
 }
 
 .hero-content button {
-  background-color: #FDC913;
-  color: #292929;
-  font-family: 'Barlow', sans-serif;
+  background-color: var(--yellow);
+  color: var(--dark);
+  font-family: var(--font-body);
   font-weight: 600;
   font-size: 1rem;
   padding: 12px 40px;
@@ -79,7 +102,7 @@ body {
 }
 
 .categories {
-  background-color: white;
+  background-color: var(--white);
   width: 100%;
   margin: 0 auto; /* auto kullanmanın nedeni farklı içerik kapsayıcılarını kendi genişlik sınırları içinde ortalamak.*/
   overflow-x: auto; /* Kategoriler tek satıra sığmazsa yatay kaydırmaya izin verir. */
@@ -92,7 +115,7 @@ body {
   /* Öğeleri tek satırda tutar; sığmayanlar yatay kaydırılır. */
   justify-content: space-between;
   width: 100%;
-  max-width: 850px;
+  max-width: var(--container);
   flex-wrap: nowrap;
   list-style: none;
   padding: 15px 0;
@@ -125,7 +148,7 @@ body {
   display: flex;
   justify-content: center;
   gap: 10px;
-  max-width: 850px;
+  max-width: var(--container);
   margin: 50px auto 25px;
   padding: 0;
   box-sizing: border-box;
@@ -149,7 +172,7 @@ body {
   display: flex;
   align-items: center; 
   padding: 20px 30px;
-  color: #fff;
+  color: var(--white);
   box-sizing: border-box;
 }
 
@@ -172,9 +195,9 @@ body {
 }
 
 .campaigns button {
-  background-color: white;
-  color: #CE2829;
-  font-family: 'Barlow', sans-serif;
+  background-color: var(--white);
+  color: var(--red);
+  font-family: var(--font-body);
   font-weight: 600;
   font-size: 0.65rem;
   padding: 0.6rem 1.4rem;
@@ -184,35 +207,35 @@ body {
   text-transform: uppercase;
 }
 .campaigns__item--left p {
-  font-family: 'Barlow', sans-serif;
+  font-family: var(--font-body);
   font-size: 0.85rem;  /* Başlıktan daha küçük ve kompakt bir görünüm için düşürüldü */
   font-weight: 430;
   line-height: 1.2;    /* Satır aralığı daraltılarak tek satırda akıcı durması sağlandı */
-  color: #ffffff;
+  color: var(--white);
 }
 
 .campaigns__item--left h2 {
-  font-family: 'Quattrocento', serif;
+  font-family: var(--font-serif);
   font-size: 2.5rem;     /* Figma ölçüleriyle uyumlu olması için hafifçe dengelendi */
   font-weight: 700;
-  color: #ffffff;
+  color: var(--white);
   line-height: 1.15;
   max-width: 220px;    /* Genişlik daraltılarak metnin tasarımdaki gibi kırılması sağlandı */
   margin: 0 0 10px 0;
 }
 .campaigns__right-col h3 {
-  font-family: 'Barlow', sans-serif; /* veya 'Roboto Condensed', sans-serif */
+  font-family: var(--font-body); /* veya var(--font-heading) */
   font-size: 0.9rem;                 /* Sol kart başlığından belirgin biçimde küçük ve dengeli boyut */
   font-weight: 500;                   /* Kalın ağırlık */
-  color: #ffffff;                     /* Beyaz renk */
+  color: var(--white);                     /* Beyaz renk */
   line-height: 1.2;
   margin: 0 0 8px 0;
 }
 .campaigns__item--bottom h3 {
-  color: #292929;
+  color: var(--dark);
 }
 .campaigns__item--bottom .red {
-  color: #ce2829; /* Tasarımdaki kırmızı tonu */
+  color: var(--red); /* Tasarımdaki kırmızı tonu */
   font-weight: 700;
 }
 .menu {
@@ -220,28 +243,28 @@ body {
   padding: 40px 20px;
 }
 .menu p {
-  font-family: 'Satisfy', cursive;
+  font-family: var(--font-script);
   font-size: 1.3rem;
-  color: #ce2829;
+  color: var(--red);
   margin: 0 0 10px 0;
   font-weight: 400;
 }
 
 .menu h2 {
-  font-family: 'Barlow', sans-serif;
+  font-family: var(--font-body);
   font-size: 2.2rem;
   font-weight: 700;
-  color: #292929;
+  color: var(--dark);
   line-height: 1.2;
   margin: 0 auto;
-  max-width: 850px;
+  max-width: var(--container);
 }
 
 .foods__list {
   display: flex;
   justify-content: center;
   align-items: center;
-  max-width: 850px;
+  max-width: var(--container);
   gap: 6px;                /* Kapsüller dar ekranlarda daha geç kaydırmaya başlar. */
   list-style: none;
   padding: 0;
@@ -251,7 +274,7 @@ body {
   scrollbar-width: none;
 }
 
-@media (max-width: 898px) {
+@media (max-width: 526px) {
   .foods__list {
     justify-content: center;
     flex-wrap: wrap;
@@ -268,13 +291,13 @@ body {
   align-items: center;
   gap: 10px;               /* İkon ile metin arasındaki küçük boşluk */
   padding: 12px 14px;      /* Kapsüle hacim verir; yatay boşluk tüm öğelerin sığmasına yardım eder. */
-  background-color: #ffffff; /* Beyaz kapsül arkaplanı */
-  color: #292929;          /* Varsayılan metin rengi */
+  background-color: var(--white); /* Beyaz kapsül arkaplanı */
+  color: var(--dark);          /* Varsayılan metin rengi */
   border-radius: 30px;     /* Köşeleri yuvarlatarak kapsül formu verme */
 }
 .foods__item.foods__item--active {
-  background-color: #292929; /* Koyu gri arkaplan */
-  color: #ffffff;            /* Beyaz yazı ve ikon uyumu */
+  background-color: var(--dark); /* Koyu gri arkaplan */
+  color: var(--white);            /* Beyaz yazı ve ikon uyumu */
 }
 .menu__cards {
   /* Bu kapsayıcı Grid olduğunda, içindeki her .menu__card bir hücreye yerleşir. flex de kullanılabilirdi ancak bu şekilde kaç sütun istediğimizi açıkca tarif ettik. */
@@ -283,23 +306,23 @@ body {
   grid-template-columns: repeat(3, 1fr);
   /* Hem sütunlar hem satırlar arasında 25px boşluk bırakır. */
   gap: 25px;
-  max-width: 850px;
+  max-width: var(--container);
   /* Genişliği sınırla, auto kenar boşluklarıyla kapsayıcıyı ortala. */
   margin: 0 auto;
 }
 
 .menu__card {
-  background-color: #ffffff;
+  background-color: var(--white);
   padding: 20px;
   box-sizing: border-box;
   border-radius: 12px;
 }
 
 .menu__card h3 {
-  font-family: 'Barlow', sans-serif;
+  font-family: var(--font-body);
   font-size: 1.2rem;
   font-weight: 700;
-  color: #292929;
+  color: var(--dark);
   margin: 0 0 15px 0; /*puan fiyat satırı ve ürün adı arasına boşluk verdik*/
 }
 .menu__card img {
@@ -324,9 +347,9 @@ body {
 
 .card-information p {
   margin: 0;
-  font-family: 'Barlow', sans-serif;
+  font-family: var(--font-body);
   font-size: 0.95rem;
-  color: #555555;
+  color: var(--gray-medium);
 }
 
 /* Puan: Solda */
@@ -337,26 +360,26 @@ body {
 
 /* Değerlendirme sayısı (200): Ortada */
 .card-information p:nth-child(2) {
-  color: #5F5F5F;
+  color: var(--gray);
   text-align: right;
 }
 
 /* Fiyat: En sağda */
 .card-information p:nth-child(3) {
   font-weight: 700;
-  color: #292929;
+  color: var(--dark);
   text-align: right;
 }
 
 footer {
-  background-color: #1a1a1a;
-  color: #ffffff;
-  font-family: 'Barlow', sans-serif;
+  background-color: var(--footer-bg);
+  color: var(--white);
+  font-family: var(--font-body);
   padding: 60px 20px 20px 20px;
 }
 
 .footer__main {
-  max-width: 850px;
+  max-width: var(--container);
   margin: 0 auto;
 }
 
@@ -370,7 +393,7 @@ footer {
   gap: 40px;
   align-items: start; /*start ile logo, iletişim bilgileri, menü ve Instagram bölümleri kendi içerik yüksekliklerinde kalıp yukarıdan başlar.*/
   padding-bottom: 40px;
-  border-bottom: 1px solid #333333;
+  border-bottom: 1px solid var(--footer-border);
 }
 
 /* Grid satır/sütun numaraları çizgilerle gösterilir: 1 / 2, ilk sütunu kapsar. */
@@ -412,7 +435,7 @@ footer {
   display: flex;
   align-items: center;
   gap: 12px;
-  color: #cccccc;
+  color: var(--text-light);
   font-size: 0.95rem;
 }
 
@@ -421,7 +444,7 @@ footer {
   font-size: 1.25rem;
   font-weight: 700;
   margin: 0 0 20px 0;
-  color: #ffffff;
+  color: var(--white);
 }
 
 .hot__menu-list {
@@ -434,7 +457,7 @@ footer {
 }
 
 .hot__menu-list li {
-  color: #cccccc;
+  color: var(--text-light);
   font-size: 0.95rem;
   cursor: pointer;
   
@@ -462,12 +485,12 @@ footer {
 }
 
 .footer__bottom {
-  max-width: 850px;
+  max-width: var(--container);
   margin: 20px auto 0 auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  color: #888888;
+  color: var(--text-muted);
   font-size: 0.9rem;
 }
 
