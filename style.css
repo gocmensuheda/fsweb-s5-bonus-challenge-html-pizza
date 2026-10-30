@@ -1,9 +1,13 @@
- * {
+* {
+  /* Padding ve kenarlık, verilen genişliğin içine dahil edilir. */
   box-sizing: border-box;
 }
 body {
   background-color: #FAF7F2;
   margin: 0;
+}
+:root {
+  --container: 850px; /* tüm bölümler için ortak içerik genişliği */
 }
 
 .hero {
@@ -13,7 +17,8 @@ body {
   background-position: center bottom; /* Görseli alta ve ortaya sabitler */
   background-size: cover; /* veya genişliğe göre '100% auto' */
   width: 100%;
-  min-height: 100vh; /* Ekranın tamamını kaplamasını sağlar */
+  /* Yükseklik ekranla değişir; clamp alt ve üst sınır koyar. */
+  min-height: clamp(560px, 56vw, 860px);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -24,6 +29,7 @@ body {
 /* İçeriğin ortalanması ve düzgün durması için */
 .app {
   width: 100%;
+  /* İçeriği ortalarken çok geniş ekranlarda yayılmasını önler. */
   max-width: 800px; /* İçeriklerin çok dağılmasını engeller */
   padding: 40px 20px;
   display: flex;
@@ -82,21 +88,24 @@ body {
 
 .categories__list {
   display: flex;
-  justify-content: center;
+  /* Öğeleri satırda dağıtır; flex-wrap sığmayanları alta taşır. */
+  justify-content: space-between;
+  max-width: 850px;
   flex-wrap: wrap; /* Sığmayan elemanların alt satıra geçmesini sağlar */
   list-style: none;
-  padding: 10px 20px;
+  padding:25px 0; 
   margin: 0;
   gap: 15px;
 }
 
 .campaigns {
+  /* Kampanya kartlarını yan yana dizer; boşluk gap ile verilir. */
   display: flex;
   justify-content: center;
   gap: 10px;
-  max-width: 650px;
-  margin: 25px auto;
-  padding: 0 15px;
+  max-width: 850px;
+  margin: 50px auto 25px;
+  padding: 0;
   box-sizing: border-box;
   width: 100%;
 }
@@ -117,26 +126,26 @@ body {
   position: relative;
   display: flex;
   align-items: center; 
-  padding: 20px;
+  padding: 20px 30px;
   color: #fff;
   box-sizing: border-box;
 }
 
 .campaigns__item--left {
   flex: 1;
-  min-height: 260px; 
+  min-height: 356px; 
   background-image: url('/assets/iteration-2/cta/kart-1.png');
   align-items: flex-start; /* İçeriği dikeyde ortalamak yerine üst kısma hizalar */
   padding-top: 30px;
 }
 
 .campaigns__item--top {
-  min-height: 125px;
+  min-height: 173px;
   background-image: url('/assets/iteration-2/cta/kart-2.png');
 }
 
 .campaigns__item--bottom {
-  min-height: 125px;
+  min-height: 173px;
   background-image: url('/assets/iteration-2/cta/kart-3.png');
 }
 
@@ -146,7 +155,7 @@ body {
   font-family: 'Barlow', sans-serif;
   font-weight: 600;
   font-size: 0.65rem;
-  padding: 0.3rem 0.9rem;
+  padding: 0.6rem 1.4rem;
   border: none;
   border-radius: 50px;
   cursor: pointer;
@@ -203,17 +212,18 @@ body {
   color: #292929;
   line-height: 1.2;
   margin: 0 auto;
-  max-width: 600px;
+  max-width: 850px;
 }
 
 .foods__list {
   display: flex;
-  justify-content: center; /* Ortalanmış görünüm */
+  justify-content: space-between; /* Ortalanmış görünüm */
   align-items: center;
+  max-width: 850px;
   gap: 15px;               /* Öğeler arası boşluk */
   list-style: none;
   padding: 0;
-  margin: 0;
+  margin: 0 auto;
   flex-wrap: wrap;         /* Taşma durumunda alt satıra geçiş */
 }
 .foods {
@@ -234,15 +244,17 @@ body {
   color: #ffffff;            /* Beyaz yazı ve ikon uyumu */
 }
 .menu__cards {
-  display: flex;
-  justify-content: center;
-  gap: 1rem;
-  flex-wrap: wrap;
+  /* Grid, üç kartı eşit genişlikte sütunlara yerleştirir. */
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;                       /* eskisi: 1rem */
+  max-width: 850px;
+  margin: 0 auto;
+  /* justify-content ve flex-wrap silindi */
 }
 
 .menu__card {
   background-color: #ffffff;
-  width: 300px;
   padding: 20px;
   box-sizing: border-box;
   border-radius: 12px;
@@ -257,16 +269,18 @@ body {
 }
 .menu__card img {
   width: 100%;
-  max-width: 200px;
+  max-width: 220px;
   height: auto;
   display: block;
   margin: 0 auto 16px auto;
 }
 
 .card-information {
+  /* Puan, değerlendirme ve fiyat için üç ayrı sütun oluşturur. */
   display: grid;
   grid-template-columns: auto 1fr auto;
   align-items: center;
+  column-gap: 1.5rem;
   width: 100%;
   margin: 0;
 }
@@ -287,7 +301,7 @@ body {
 /* Değerlendirme sayısı (200): Ortada */
 .card-information p:nth-child(2) {
   color: #5F5F5F;
-  text-align: center;
+  text-align: right;
 }
 
 /* Fiyat: En sağda */
@@ -305,12 +319,13 @@ footer {
 }
 
 .footer__main {
-  max-width: 1200px;
+  max-width: 850px;
   margin: 0 auto;
 }
 
 /* 4 doğrudan öğeyi 3 sütunlu düzene oturtan Grid yapısı */
 .footer__section {
+  /* Footer içeriğini üç sütunlu düzene yerleştirir. */
   display: grid;
   grid-template-columns: 1.2fr 1fr 1fr;
   gap: 40px;
@@ -407,7 +422,7 @@ footer {
 }
 
 .footer__bottom {
-  max-width: 1200px;
+  max-width: 850px;
   margin: 20px auto 0 auto;
   display: flex;
   justify-content: space-between;
@@ -417,6 +432,7 @@ footer {
 }
 
 @media (max-width: 526px) {
+  /* Dar ekranlarda düzenleri tek/iki sütuna çevirir. */
   .hero__slogan {
     display: none;
   }
@@ -436,6 +452,7 @@ footer {
   }
   .categories__list {
     display: grid;
+    padding: 20px; 
     grid-template-columns: repeat(2, 1fr);
   }
   .foods__list {
@@ -455,23 +472,32 @@ footer {
   }
 
   .anaBaslik {
-    font-size: 1.8rem;
+    font-size: 2.6rem;
     line-height: 1.1;
   }
 
   .campaigns {
     flex-direction: column;
     gap: 10px;
-    padding: 0 10px;
+    padding: 0 20px;
+    margin-top: 30px;
   }
 
   .campaigns__item--left {
-    min-height: 200px;
+    min-height: 220px;
   }
 
   .campaigns__item--top,
   .campaigns__item--bottom {
-    min-height: 120px;
+    min-height: 140px;
+  }
+
+  .campaigns__right-col h3 {
+  font-size: 1.1rem;
+  }
+  .campaigns__item--left h2 {
+  font-size: 2rem;
+  max-width: 180px;
   }
 
   .menu {
@@ -479,19 +505,21 @@ footer {
   }
 
   .menu h2 {
-    font-size: 1.4rem;
+    font-size: 1.6rem;
   }
 
   .menu__cards {
-    flex-direction: column;
-    align-items: center;
-    gap: 15px;
-    padding: 0 10px;
+  grid-template-columns: 1fr;      /* eskisi: flex-direction: column; align-items: center */
+  gap: 15px;
+  padding: 0 20px;                 /* eskisi: 0 10px */
   }
 
   .menu__card {
     width: 100%;
     max-width: 100%;
+  }
+  .menu__card img {
+  max-width: 100%;
   }
 
   footer {
@@ -516,7 +544,8 @@ footer {
 
   .footer__bottom {
     flex-direction: column;
+    align-items: flex-start;
     gap: 10px;
-    text-align: center;
+    text-align: left;
   }
 }
